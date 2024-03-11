@@ -16,6 +16,9 @@ import { Transactions, TransactionsProps } from "@/components/Transactions"
 // UTILS
 import { mocks } from "@/utils/mocks"
 
+// DATABASE
+import { useGoalRepository } from "@/storage/useGoalRepository"
+
 export default function Home() {
   // LISTS
   const [transactions, setTransactions] = useState<TransactionsProps>([])
@@ -24,6 +27,9 @@ export default function Home() {
   // FORM
   const [name, setName] = useState("")
   const [total, setTotal] = useState("")
+
+    // DATABASE
+    const useGoal = useGoalRepository()
 
   // BOTTOM SHEET
   const bottomSheetRef = useRef<Bottom>(null)
@@ -42,6 +48,8 @@ export default function Home() {
         return Alert.alert("Erro", "Valor inválido.")
       }
 
+      // console.log({ name, total: totalAsNumber })
+      useGoal.create({ name, total: totalAsNumber })      
       console.log({ name, total: totalAsNumber })
 
       Keyboard.dismiss()
