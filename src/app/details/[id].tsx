@@ -23,6 +23,7 @@ import { currencyFormat } from "@/utils/currencyFormat"
 
 // DATABASE
 import { useGoalRepository } from "@/storage/useGoalRepository"
+import { useTransactionRepository } from "@/storage/useTransactionRepository"
 
 type Details = {
   name: string
@@ -43,7 +44,8 @@ export default function Details() {
   const goalId = Number(routeParams.id)
 
   // DATABASE
-  const useGoal = useGoalRepository()
+  const useGoal = useGoalRepository()  
+  const useTransaction = useTransactionRepository()
 
   // BOTTOM SHEET
   const bottomSheetRef = useRef<Bottom>(null)
@@ -90,6 +92,7 @@ export default function Details() {
         amountAsNumber = amountAsNumber * -1
       }
 
+      useTransaction.create({ goalId, amount: amountAsNumber })
       console.log({ goalId, amount: amountAsNumber })
 
       Alert.alert("Sucesso", "Transação registrada!")
