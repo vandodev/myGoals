@@ -15,6 +15,17 @@ type TransactionResponseDatabase = {
 export function useTransactionRepository() {
   const database = useSQLiteContext()
 
+  
+  function findLatest() {
+    try {
+      return database.getAllSync<TransactionResponseDatabase>(
+        "SELECT * FROM transactions ORDER BY created_at DESC LIMIT 10"
+      )
+    } catch (error) {
+      throw error
+    }
+  }
+
   function findByGoal(goalId: number) {
     try {
         const statement = database.prepareSync(
@@ -50,5 +61,6 @@ export function useTransactionRepository() {
   return {
     create,
     findByGoal,
+    findLatest
   }
 }

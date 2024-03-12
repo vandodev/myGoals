@@ -18,6 +18,7 @@ import { mocks } from "@/utils/mocks"
 
 // DATABASE
 import { useGoalRepository } from "@/storage/useGoalRepository"
+import { useTransactionRepository } from "@/storage/useTransactionRepository"
 
 export default function Home() {
   // LISTS
@@ -28,8 +29,9 @@ export default function Home() {
   const [name, setName] = useState("")
   const [total, setTotal] = useState("")
 
-    // DATABASE
-    const useGoal = useGoalRepository()
+  // DATABASE
+  const useGoal = useGoalRepository()  
+  const useTransaction = useTransactionRepository()
 
   // BOTTOM SHEET
   const bottomSheetRef = useRef<Bottom>(null)
@@ -75,7 +77,7 @@ export default function Home() {
 
   async function fetchTransactions() {
     try {
-      const response = mocks.transactions
+      const response = useTransaction.findLatest()
 
       setTransactions(
         response.map((item) => ({
