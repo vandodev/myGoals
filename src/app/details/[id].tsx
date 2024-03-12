@@ -56,7 +56,7 @@ export default function Details() {
     try {
       if (goalId) {
         const goal = useGoal.show(goalId)
-        const transactions = mocks.transactions
+        const transactions = useTransaction.findByGoal(goalId)
 
         if (!goal || !transactions) {
           return router.back()
@@ -102,6 +102,8 @@ export default function Details() {
 
       setAmount("")
       setType("up")
+      fetchDetails()
+
     } catch (error) {
       console.log(error)
     }
