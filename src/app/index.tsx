@@ -60,6 +60,7 @@ export default function Home() {
 
       setName("")
       setTotal("")
+      fetchGoals()
     } catch (error) {
       Alert.alert("Erro", "Não foi possível cadastrar.")
       console.log(error)

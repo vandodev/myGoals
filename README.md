@@ -1,24 +1,25 @@
-<h1 align="center">
-  <img width="100%" alt="Banner" title="Banner" src=".github/banner.png" />
-</h1>
+<h1 align="center"> My goals </h1>
 
-### Links
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
 
-🔴 **Assista meus vídeos no YouTube:** [@orodrigogo](https://www.youtube.com/@orodrigogo)
+<br>
 
-🔴 **Figma do projeto:** [MyGoals App](https://www.figma.com/community/file/1346604660147063430)
+![capa](https://github.com/vandodev/myGoals/blob/main/.github/capa.png)
 
----
+## 🚀 Tecnologias
 
-<h1 align="center">
-  <img width="100%" alt="Banner" title="App" src=".github/app.png" />
-</h1>
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### Sobre o projeto
+- React Native
+- Expo
+- Typescript
+- gorhom/bottom-sheet
+- nativewind
+- sqlite-next
+- dayjs
 
-Imagine que Rodrigo deseja comprar um Notebook novo que custa R$ 5.000,00. Ele acha prudente poupar o dinheiro necessário para comprar à vista, conseguir um bom preço e não comprometer o orçamento com parcelas.
-Por isso, pode usar esse App Minhas Metas para poupar até atingir sua meta financeira para adquirir um Notebook novo. Esse é um dos projetos desenvolvidos em aula do evento React Native na Prática.
-
-
-### Dica para usar esse repositório
-Na branch `main` você irá encontrar somente as interfaces do App. Na branch `finished` você irá encontrar o código completo do App pronto com as funcionalidades implementadas.
